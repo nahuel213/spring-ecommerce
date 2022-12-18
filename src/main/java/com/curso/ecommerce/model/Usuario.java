@@ -1,6 +1,16 @@
 package com.curso.ecommerce.model;
 
+
+import jakarta.persistence.*;
+import org.aspectj.weaver.ast.Or;
+
+import java.util.List;
+
+@Entity
+@Table(name = "usuarios")
 public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
     private String username;
@@ -9,6 +19,21 @@ public class Usuario {
     private String telefono;
     private String tipo;
     private String password;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Producto> productos;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Orden> ordenes;
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
+
 
     public Integer getId() {
         return id;
