@@ -9,7 +9,7 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
-    private String descripción;
+    private String descripcion;
     private String imagen;
     private double precio;
     private int cantidad;
@@ -34,12 +34,12 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public String getDescripción() {
-        return descripción;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescripción(String descripción) {
-        this.descripción = descripción;
+    public void setDescripcion(String descripción) {
+        this.descripcion = descripción;
     }
 
     public String getImagen() {
@@ -80,7 +80,7 @@ public class Producto {
     public Producto(Integer id, String nombre, String descripción, String imagen, double precio, int cantidad, Usuario usuario) {
         this.id = id;
         this.nombre = nombre;
-        this.descripción = descripción;
+        this.descripcion = descripción;
         this.imagen = imagen;
         this.precio = precio;
         this.cantidad = cantidad;
@@ -92,7 +92,7 @@ public class Producto {
         return "Producto{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", descripción='" + descripción + '\'' +
+                ", descripción='" + descripcion + '\'' +
                 ", imagen='" + imagen + '\'' +
                 ", precio=" + precio +
                 ", cantidad=" + cantidad +
