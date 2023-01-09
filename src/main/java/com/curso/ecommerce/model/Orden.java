@@ -20,6 +20,7 @@ public class Orden {
 
     @OneToOne(mappedBy = "orden")
     private DetalleOrden detalle;
+
     public Integer getId() {
         return id;
     }

@@ -112,9 +112,7 @@ public class Usuario {
                 ", direccion='" + direccion + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", tipo='" + tipo + '\'' +
-                ", password='" + password + '\'' +
-                ", productos=" + productos +
-                ", ordenes=" + ordenes +
+                ", password='" + password + '\''+
                 '}';
     }
 }
