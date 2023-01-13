@@ -3,6 +3,7 @@ package com.curso.ecommerce.model;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "ordenes")
@@ -18,8 +19,11 @@ public class Orden {
     @ManyToOne
     private Usuario usuario;
 
-    @OneToOne(mappedBy = "orden")
-    private DetalleOrden detalle;
+    //Una Orden puede tener varios detalles (Si cambias esto tenes que cambiar el del otro lado, la clase par de esta)
+    //Corrección ver video: https://www.youtube.com/watch?v=hHvLlz-KvNM&list=PL3vxkSlW2FvU9z7Gz_Nn3E69HjEvv55_G&index=42
+
+    @OneToMany(mappedBy = "orden")
+    private List<DetalleOrden> detalle;
 
     public Integer getId() {
         return id;
@@ -69,11 +73,11 @@ public class Orden {
         this.usuario = usuario;
     }
 
-    public DetalleOrden getDetalle() {
+    public List<DetalleOrden> getDetalle() {
         return detalle;
     }
 
-    public void setDetalle(DetalleOrden detalle) {
+    public void setDetalle(List<DetalleOrden> detalle) {
         this.detalle = detalle;
     }
 

@@ -16,7 +16,8 @@ public class DetalleOrden {
     private double precio;
     private double total;
 
-    @OneToOne
+    //Muchos detalles de ordenes pueden tener UNA SOLA orden
+    @ManyToOne
     private Orden orden;
 
     @ManyToOne
